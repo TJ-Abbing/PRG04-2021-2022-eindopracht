@@ -8,6 +8,5 @@ body {
 }
 
 canvas {
-    /* uncomment this to scale to 100% of the window */
-    /* width:100vw; */
+    margin: 20px calc(50vw - 400px);
 }

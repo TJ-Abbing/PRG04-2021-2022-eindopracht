@@ -6,6 +6,7 @@ import * as PIXI from 'pixi.js'
 import fishImage from "./images/fish.png"
 import bubbleImage from "./images/bubble.png"
 import waterImage from "./images/water.jpg"
+
 import { Fish } from './fish';
 import { KeyboardFish } from './keyboardFish';
 
@@ -70,7 +71,7 @@ export class Game{
         for(let f = 0; f < this.fishes.length; f++){
             this.fishes[f].update(delta);
             if(this.collision(this.keyboardFish, this.fishes[f])){
-                console.log("keyboard fish touches normal fish 💀")
+                console.log("Keyboard fish touches normal fish 💀")
             }
         }
 
