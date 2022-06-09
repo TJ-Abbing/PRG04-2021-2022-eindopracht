@@ -2,7 +2,7 @@ import * as PIXI from 'pixi.js'
 import { Fish } from './fish';
 import { Game } from './game';
 export class KeyboardFish extends Fish{
-    private speed = 5;
+    private speed = 15;
     constructor(texture: PIXI.Texture, game: Game){
         super(texture, game);
         window.addEventListener("keydown", (e: KeyboardEvent) => this.onKeyDown(e))

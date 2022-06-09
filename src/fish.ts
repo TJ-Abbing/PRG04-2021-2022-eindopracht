@@ -13,10 +13,8 @@ export class Fish extends PIXI.Sprite{
         this.y = Math.random() * 450;
     }
     public update(delta: number){
-        this.x -= delta * 1;
+        this.x -= delta * 10;
         if(this.x < (0 - this.width)){
-            // finish
-            // this.game.finish();
             this.x = 800;
             this.y = Math.random() * 450;
         }

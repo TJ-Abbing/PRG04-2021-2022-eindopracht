@@ -4,12 +4,12 @@ console.log(`Running pixi.js..`) // FIRST LOG
 console.log('Running imports..')
 import * as PIXI from 'pixi.js'
 import fishImage from "./images/fish.png"
+import sharkImage from "./images/shark.png"
 import bubbleImage from "./images/bubble.png"
 import waterImage from "./images/water.jpg"
 
 import { Fish } from './fish';
 import { KeyboardFish } from './keyboardFish';
-
 
 export class Game{
 
@@ -37,6 +37,7 @@ export class Game{
         document.body.appendChild(this.pixi.view);
         this.loader = new PIXI.Loader();
         this.loader.add('fishTexture', fishImage)
+            .add('sharkTexture', sharkImage)
             .add('bubbleTexture', bubbleImage)
             .add('waterTexture', waterImage);
         this.loader.load(()=>this.loadCompleted());
@@ -61,7 +62,7 @@ export class Game{
             this.fishes.push(temp);
         }
 
-        this.keyboardFish = new KeyboardFish(this.loader.resources["fishTexture"].texture!, this);
+        this.keyboardFish = new KeyboardFish(this.loader.resources["sharkTexture"].texture!, this);
         this.pixi.stage.addChild(this.keyboardFish)
         
         this.pixi.ticker.add((delta)=>this.update(delta));
