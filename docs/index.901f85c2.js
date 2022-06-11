@@ -142,7 +142,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"fpRtI":[function(require,module,exports) {
+})({"8Atcy":[function(require,module,exports) {
 "use strict";
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -37205,6 +37205,6 @@ class KeyboardFish extends _fish.Fish {
 },{"./fish":"7VsCH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7HgQx":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('emE5o') + "shark.29daeb95.png" + "?" + Date.now();
 
-},{"./helpers/bundle-url":"lgJ39"}]},["fpRtI","edeGs"], "edeGs", "parcelRequirea0e5")
+},{"./helpers/bundle-url":"lgJ39"}]},["8Atcy","edeGs"], "edeGs", "parcelRequirea0e5")
 
 //# sourceMappingURL=index.901f85c2.js.map
