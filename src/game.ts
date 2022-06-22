@@ -1,4 +1,4 @@
-console.log(`Running pixi.js..`) // FIRST LOG
+console.log(`Running game.ts..`) // FIRST LOG
 
 // Imports
 console.log('Running imports..')
@@ -14,8 +14,8 @@ import { KeyboardFish } from './keyboardFish';
 export class Game{
 
     // Canvas size settings
-    pixiWidth = 800;
-    pixiHeight = 450;
+    private pixiWidth = 800;
+    private pixiHeight = 450;
 
     // globals
     private pixi : PIXI.Application;
@@ -72,7 +72,9 @@ export class Game{
         for(let f = 0; f < this.fishes.length; f++){
             this.fishes[f].update(delta);
             if(this.collision(this.keyboardFish, this.fishes[f])){
-                console.log("Keyboard fish touches normal fish 💀")
+                console.log(`1`)
+                this.death()
+                console.log(`2`)
             }
         }
 
@@ -85,6 +87,12 @@ export class Game{
             && bounds1.x + bounds1.width > bounds2.x
             && bounds1.y < bounds2.y + bounds2.height
             && bounds1.y + bounds1.height > bounds2.y;
+    }
+
+    public death(){
+        let killCounter = 0
+        killCounter++
+        console.log(`Current amount of kills: ${killCounter}`)
     }
 }
 new Game();

@@ -1,3 +1,4 @@
+console.log(`Running fish.ts..`)
 import * as PIXI from 'pixi.js'
 
 import { Game } from './game';
@@ -20,3 +21,4 @@ export class Fish extends PIXI.Sprite{
         }
     }
 }
+console.log(`Finished fish.ts.`)
