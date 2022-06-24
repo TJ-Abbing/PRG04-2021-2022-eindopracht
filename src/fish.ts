@@ -1,7 +1,7 @@
 console.log(`Running fish.ts..`)
 import * as PIXI from 'pixi.js'
-
 import { Game } from './game';
+
 export class Fish extends PIXI.Sprite{
     private game: Game;
     constructor(texture: PIXI.Texture, game: Game){

@@ -16,8 +16,9 @@ export class Game{
     // Canvas size settings
     private pixiWidth = 800;
     private pixiHeight = 450;
-
+    
     // globals
+    private killCounter = 0;
     private pixi : PIXI.Application;
     private loader : PIXI.Loader;
     private keyboardFish : Fish;
@@ -29,7 +30,7 @@ export class Game{
      * Initialize Pixi
      * Load assets
      */
-     constructor(){
+    constructor(){
         this.fishes = [];
         this.pixi = new PIXI.Application({ width: this.pixiWidth, height: this.pixiHeight });
         this.pixi.stage.interactive = true;
@@ -71,10 +72,8 @@ export class Game{
         this.keyboardFish.update(delta);
         for(let f = 0; f < this.fishes.length; f++){
             this.fishes[f].update(delta);
-            if(this.collision(this.keyboardFish, this.fishes[f])){
-                console.log(`1`)
+            if(this.collision(this.keyboardFish, this.fishes[f])){      
                 this.death()
-                console.log(`2`)
             }
         }
 
@@ -90,9 +89,8 @@ export class Game{
     }
 
     public death(){
-        let killCounter = 0
-        killCounter++
-        console.log(`Current amount of kills: ${killCounter}`)
+        this.killCounter++
+        console.log(`Current amount of kills: ${this.killCounter}`)
     }
 }
 new Game();

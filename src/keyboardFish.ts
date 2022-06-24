@@ -2,6 +2,7 @@ console.log(`Running keyboardsFish.ts..`)
 import * as PIXI from 'pixi.js'
 import { Fish } from './fish';
 import { Game } from './game';
+
 export class KeyboardFish extends Fish{
     private speed = 15;
     constructor(texture: PIXI.Texture, game: Game){
