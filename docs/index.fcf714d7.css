@@ -1,0 +1,17 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #1b192d;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+canvas {
+  width: 1200px;
+  margin: auto;
+  padding: auto;
+  display: block;
+}
+
+/*# sourceMappingURL=index.fcf714d7.css.map */
