@@ -57,7 +57,7 @@ export class Game{
         water.width = this.pixiWidth; // Gives the water the same width as the canvas.
         this.pixi.stage.addChild(water); // Adds the water.
 
-        for(let i = 0; i < 5; i++){
+        for(let i = 0; i < 1; i++){
             let temp = new Fish(this.loader.resources["fishTexture"].texture!, this);
             this.pixi.stage.addChild(temp);
             this.fishes.push(temp);
@@ -72,7 +72,11 @@ export class Game{
         this.keyboardFish.update(delta);
         for(let f = 0; f < this.fishes.length; f++){
             this.fishes[f].update(delta);
-            if(this.collision(this.keyboardFish, this.fishes[f])){      
+            if(this.collision(this.keyboardFish, this.fishes[f])){  
+                console.log(`Running fish repositioning..`)    
+                this.fishes[f].x = 800
+                this.fishes[f].y = Math.random() * 450;
+                console.log(`Finished fish repositioning.`)
                 this.death()
             }
         }
