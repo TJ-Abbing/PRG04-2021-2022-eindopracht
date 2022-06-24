@@ -1,5 +1,10 @@
 console.log(`Running game.ts..`) // FIRST LOG
 
+const scoreText = new PIXI.Text(`Score : 0`)
+scoreText.style = new PIXI.TextStyle({
+    fill: 0xFFFFFF
+})
+
 // Imports
 console.log('Running imports..')
 import * as PIXI from 'pixi.js'
@@ -59,6 +64,7 @@ export class Game{
         water.height = this.pixiHeight; // Gives the water the same height as the canvas.
         water.width = this.pixiWidth; // Gives the water the same width as the canvas.
         this.pixi.stage.addChild(water); // Adds the water.
+        this.pixi.stage.addChild(scoreText); // Adds the water.
 
         for(let i = 0; i < 5; i++){
             let temp = new Fish(this.loader.resources["fishTexture"].texture!, this);
@@ -110,7 +116,7 @@ export class Game{
     public death(){
         this.killCounter++
         console.log(`Current amount of kills: ${this.killCounter}`)
-        
+        scoreText.text = `Score : ${this.killCounter}`;
     }
 }
 new Game();
