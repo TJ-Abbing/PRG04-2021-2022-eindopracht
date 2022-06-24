@@ -9,7 +9,11 @@ body {
 
 canvas {
     /*Small screen*/ 
-    margin: 20px calc(50vw - 400px);
+    /* margin: 20px calc(50vw - 400px); */
+    padding: auto;
+    margin: auto;
+    display: block;
+    width: 1200px;
     /*Full screen*/
     /* width:100vw;  */
 }
