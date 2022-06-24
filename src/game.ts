@@ -15,7 +15,7 @@ import waterImage from "./images/water.jpg"
 
 import { Fish } from './fish';
 import { Bubble } from './bubble'
-import { KeyboardFish } from './keyboardFish';
+import { Shark } from './shark';
 
 export class Game{
 
@@ -27,7 +27,7 @@ export class Game{
     private killCounter = 0;
     private pixi : PIXI.Application;
     private loader : PIXI.Loader;
-    private keyboardFish : Fish;
+    private shark : Fish;
     private bubbles : Bubble[];
     private fishes : Fish[];
 
@@ -64,7 +64,7 @@ export class Game{
         water.height = this.pixiHeight; // Gives the water the same height as the canvas.
         water.width = this.pixiWidth; // Gives the water the same width as the canvas.
         this.pixi.stage.addChild(water); // Adds the water.
-        this.pixi.stage.addChild(scoreText); // Adds the water.
+        this.pixi.stage.addChild(scoreText); // Adds the score.
 
         for(let i = 0; i < 5; i++){
             let temp = new Fish(this.loader.resources["fishTexture"].texture!, this);
@@ -78,17 +78,17 @@ export class Game{
             this.bubbles.push(temp);
         }
 
-        this.keyboardFish = new KeyboardFish(this.loader.resources["sharkTexture"].texture!, this);
-        this.pixi.stage.addChild(this.keyboardFish)
+        this.shark = new Shark(this.loader.resources["sharkTexture"].texture!, this);
+        this.pixi.stage.addChild(this.shark)
         
         this.pixi.ticker.add((delta)=>this.update(delta));
     }
     private update(delta: number){
-        this.keyboardFish.update(delta);
+        this.shark.update(delta);
 
         for(let f = 0; f < this.fishes.length; f++){
             this.fishes[f].update(delta);
-            if(this.collision(this.keyboardFish, this.fishes[f])){  
+            if(this.collision(this.shark, this.fishes[f])){  
                 console.log(`Running fish repositioning..`)    
                 this.fishes[f].x = 1600
                 this.fishes[f].y = Math.random() * 900;
@@ -98,7 +98,7 @@ export class Game{
             }       
         }
 
-        for(let f = 0; f < this.fishes.length; f++){
+        for(let f = 0; f < this.bubbles.length; f++){
             this.bubbles[f].update(delta);     
         }
 

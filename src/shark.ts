@@ -4,7 +4,7 @@ import * as PIXI from 'pixi.js'
 import { Fish } from './fish';
 import { Game } from './game';
 
-export class KeyboardFish extends Fish{
+export class Shark extends Fish{
     private speed = 40;
     constructor(texture: PIXI.Texture, game: Game){
         super(texture, game);
@@ -36,8 +36,8 @@ export class KeyboardFish extends Fish{
         }
     }
     public update(delta: number){
-        
+       
     }
 }
 
-console.log(`Runnning keyboardFish.ts.`)
+console.log(`Runnning shark.ts.`)
