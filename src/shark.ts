@@ -11,13 +11,9 @@ export class Shark extends Sealife{
     constructor(texture: PIXI.Texture, game: Game){
         super(texture, game);
         window.addEventListener("keydown", (e: KeyboardEvent) => this.onKeyDown(e))
-        // window.addEventListener("keyup", (e: KeyboardEvent) => this.onKeyUp(e))
     }
-    // onKeyUp(e: KeyboardEvent): any {
-    //     console.log('keyup');
-    // }
+
     onKeyDown(e: KeyboardEvent): any {
-        // console.log(e.key.toUpperCase());
         switch (e.key.toUpperCase()) {
             case "W":
             case "ARROWUP":
@@ -37,6 +33,7 @@ export class Shark extends Sealife{
                 break;
         }
     }
+    
     public update(delta: number){
        
     }

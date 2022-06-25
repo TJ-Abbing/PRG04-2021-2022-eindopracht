@@ -530,8 +530,8 @@ var _waterJpgDefault = parcelHelpers.interopDefault(_waterJpg);
 var _fish = require("./fish");
 var _bubble = require("./bubble");
 var _shark = require("./shark");
-console.log(`Running game.ts..`) // FIRST LOG
-;
+console.log(`Running game.ts..`);
+// Scoreboard
 const scoreText = new _pixiJs.Text(`Score : 0`);
 scoreText.style = new _pixiJs.TextStyle({
     fill: 16777215
@@ -619,8 +619,7 @@ class Game {
     }
 }
 new Game();
-console.log(`Finished pixi.js.`) // LAST LOG
-;
+console.log(`Finished pixi.js.`);
 
 },{"pixi.js":"dsYej","./images/fish.png":"3tLwD","./images/shark.png":"7HgQx","./images/bubble.png":"iMP3P","./images/water.jpg":"jj9Eg","./fish":"7VsCH","./bubble":"iOWvL","./shark":"kN3uI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dsYej":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -37243,13 +37242,8 @@ class Shark extends _sealife.Sealife {
         super(texture, game);
         window.addEventListener("keydown", (e)=>this.onKeyDown(e)
         );
-    // window.addEventListener("keyup", (e: KeyboardEvent) => this.onKeyUp(e))
     }
-    // onKeyUp(e: KeyboardEvent): any {
-    //     console.log('keyup');
-    // }
     onKeyDown(e) {
-        // console.log(e.key.toUpperCase());
         switch(e.key.toUpperCase()){
             case "W":
             case "ARROWUP":

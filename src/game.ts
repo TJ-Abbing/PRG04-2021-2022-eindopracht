@@ -1,5 +1,6 @@
-console.log(`Running game.ts..`) // FIRST LOG
+console.log(`Running game.ts..`)
 
+// Scoreboard
 const scoreText = new PIXI.Text(`Score : 0`)
 scoreText.style = new PIXI.TextStyle({
     fill: 0xFFFFFF
@@ -121,4 +122,4 @@ export class Game{
 }
 new Game();
 
-console.log(`Finished pixi.js.`) // LAST LOG
+console.log(`Finished pixi.js.`)
