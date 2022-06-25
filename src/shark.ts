@@ -1,11 +1,13 @@
 console.log(`Running keyboardsFish.ts..`)
 
 import * as PIXI from 'pixi.js'
-import { Fish } from './fish';
 import { Game } from './game';
+import { Sealife } from './sealife';
 
-export class Shark extends Fish{
+export class Shark extends Sealife{
+
     private speed = 40;
+    
     constructor(texture: PIXI.Texture, game: Game){
         super(texture, game);
         window.addEventListener("keydown", (e: KeyboardEvent) => this.onKeyDown(e))

@@ -113,7 +113,7 @@ export class Game{
             && bounds1.y + bounds1.height > bounds2.y;
     }
 
-    public death(){
+    private death(){
         this.killCounter++
         console.log(`Current amount of kills: ${this.killCounter}`)
         scoreText.text = `Score : ${this.killCounter}`;

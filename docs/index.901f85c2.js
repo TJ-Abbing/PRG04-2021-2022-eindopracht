@@ -622,7 +622,7 @@ new Game();
 console.log(`Finished pixi.js.`) // LAST LOG
 ;
 
-},{"pixi.js":"dsYej","./images/fish.png":"3tLwD","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./images/shark.png":"7HgQx","./images/bubble.png":"iMP3P","./images/water.jpg":"jj9Eg","./fish":"7VsCH","./bubble":"iOWvL","./shark":"kN3uI"}],"dsYej":[function(require,module,exports) {
+},{"pixi.js":"dsYej","./images/fish.png":"3tLwD","./images/shark.png":"7HgQx","./images/bubble.png":"iMP3P","./images/water.jpg":"jj9Eg","./fish":"7VsCH","./bubble":"iOWvL","./shark":"kN3uI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dsYej":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "utils", ()=>_utils
@@ -37170,14 +37170,11 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Fish", ()=>Fish
 );
-var _pixiJs = require("pixi.js");
+var _sealife = require("./sealife");
 console.log(`Running fish.ts..`);
-class Fish extends _pixiJs.Sprite {
+class Fish extends _sealife.Sealife {
     constructor(texture, game){
-        super(texture); // new PIXI.Sprite()
-        this.game = game;
-        this.anchor.set(0.5);
-        this.y = 100;
+        super(texture, game);
         this.tint = Math.random() * 16711680;
         this.x = Math.random() * 1600;
         this.y = Math.random() * 900;
@@ -37191,6 +37188,22 @@ class Fish extends _pixiJs.Sprite {
     }
 }
 console.log(`Finished fish.ts.`);
+
+},{"./sealife":"4rb9I","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4rb9I":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Sealife", ()=>Sealife
+);
+var _pixiJs = require("pixi.js");
+console.log(`Running sealife.ts..`);
+class Sealife extends _pixiJs.Sprite {
+    constructor(texture, game){
+        super(texture); // new PIXI.Sprite() 
+        this.game = game;
+        this.anchor.set(0.5);
+    }
+}
+console.log(`Finished sealife.ts.`);
 
 },{"pixi.js":"dsYej","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iOWvL":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -37222,9 +37235,9 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Shark", ()=>Shark
 );
-var _fish = require("./fish");
+var _sealife = require("./sealife");
 console.log(`Running keyboardsFish.ts..`);
-class Shark extends _fish.Fish {
+class Shark extends _sealife.Sealife {
     speed = 40;
     constructor(texture, game){
         super(texture, game);
@@ -37260,6 +37273,6 @@ class Shark extends _fish.Fish {
 }
 console.log(`Runnning shark.ts.`);
 
-},{"./fish":"7VsCH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["fpRtI","edeGs"], "edeGs", "parcelRequirea0e5")
+},{"./sealife":"4rb9I","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["fpRtI","edeGs"], "edeGs", "parcelRequirea0e5")
 
 //# sourceMappingURL=index.901f85c2.js.map
